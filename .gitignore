@@ -1,0 +1,10 @@
+target
+.classpath
+.project
+.settings
+.gradle
+bin
+build
+appLibs
+appStatic
+.externalToolBuilders

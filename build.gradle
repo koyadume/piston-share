@@ -1,0 +1,62 @@
+subprojects {
+	apply plugin: 'eclipse'
+    apply plugin: 'maven'
+    apply plugin: 'java'
+
+	sourceCompatibility = 1.8
+
+	group = 'in.mechcloud.piston.share'
+	version = computeVersion()
+
+    ext {
+        servletVersion = '3.1.0'
+        jpaVersion = '2.1.0'
+        jaxrsVersion = '2.0.1'
+        jacksonVersion = '2.6.1'
+        jerseyVersion = '2.22.1'
+        hibernateVersion = '5.2.2.Final'
+        mariadbDriverVersion = '1.5.2'
+    }
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+
+    libsDirName = 'package'
+
+    //required for emulating maven's provided scope as gradle java plugin does not provide this configuration
+    configurations {
+        provided
+    }
+     
+    sourceSets {
+        main {
+            compileClasspath += configurations.provided
+        }
+        test {
+            compileClasspath += configurations.provided
+            runtimeClasspath += configurations.provided
+        }
+    }
+
+    //this is to make sure that runtime dependencies are not shown in eclipse
+    eclipse {
+        classpath {
+            plusConfigurations = [ configurations.compile, configurations.provided ]
+        }
+    }
+
+	dependencies {
+        provided 'org.projectlombok:lombok:1.16.6'
+		testCompile 'junit:junit:4.11'
+	}
+}
+
+def computeVersion() {
+    File version = file('version') 
+    if(version.exists()) {
+        return version.text
+    }
+    return "invalidVersion"
+}

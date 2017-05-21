@@ -1,0 +1,6 @@
+dependencies {	
+	
+	compile project(':piston-common'),
+			"org.eclipse.persistence:javax.persistence:$jpaVersion"
+	
+}
