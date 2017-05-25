@@ -13,10 +13,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package in.koyad.piston.common.constants;
+package in.koyad.piston.common.basic.model;
 
-public interface UserExternalAttributes {
-//	  public static final String UNIQUE_IDENTIFIER = "uniqueIdentifier";
-	  public static final String NAME = "name";
-	  public static final String EMAIL = "email";
+import java.util.Map;
+import java.util.Set;
+
+/**
+ * 
+ * @author shailendra
+ * @since 1.0
+ */
+public interface UserProfile {
+	
+	public String getId();
+
+	// this returns external id of user
+	public String getUid();
+	
+	public boolean isPortalAdmin();
+	
+	public Map<String, String> getExternalAttributes();
+	
+	public Map<String, Map<String, String>> getInternalAttributes();
+	
+	public Set<String> getGroups();
+	
 }
