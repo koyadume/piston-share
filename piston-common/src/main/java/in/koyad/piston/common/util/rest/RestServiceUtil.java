@@ -149,8 +149,8 @@ public abstract class RestServiceUtil {
 	
 	public static Client getClient() {
 		ClientConfig config = new ClientConfig();
-		config.property(ClientProperties.CONNECT_TIMEOUT, 5000);
-		config.property(ClientProperties.READ_TIMEOUT, 5000);
+//		config.property(ClientProperties.CONNECT_TIMEOUT, 5000);
+//		config.property(ClientProperties.READ_TIMEOUT, 5000);
 		
 		JacksonJsonProvider jsonProvider = new JacksonJsonProvider();
 		jsonProvider.setMapper(JsonProcessor.getMapper());

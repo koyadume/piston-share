@@ -49,7 +49,7 @@ public class ServiceContext {
 	}
 	
 	public void initORMContext(ORMContext ormCtx) throws FrameworkException {
-		if (null != ormCtx) {
+		if (null != ormContext) {
 			throw new FrameworkException(MessageFormat.format(CONTEXT_ALREADY_INITIALIZED, "ORM Context"));
 		} else {
 			ormContext = ormCtx;
