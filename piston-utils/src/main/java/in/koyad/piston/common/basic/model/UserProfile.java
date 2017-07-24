@@ -34,6 +34,11 @@ public interface UserProfile {
 	
 	public Map<String, String> getExternalAttributes();
 	
+	/**
+	 * key - namespace (e.g. AWS )
+	 * value - attributes map
+	 * @return
+	 */
 	public Map<String, Map<String, String>> getInternalAttributes();
 	
 	public Set<String> getGroups();

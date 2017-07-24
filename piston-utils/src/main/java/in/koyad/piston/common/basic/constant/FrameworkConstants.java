@@ -78,6 +78,7 @@ public interface FrameworkConstants {
 	public static final String PISTON_APP_LISTENERS = "piston_app_listeners";	
 	
 	public static final String PISTON_TILE_ID = "piston_tile_id";
+	public static final String PISTON_FRAME_TILE_PLUGIN = "piston_frame_tile_plugin";
 	public static final String PLUGIN_RES_PARENT_FOLDER = "appStatic";
 	
 	public static final String PREFIX_REDIRECT = "redirect:";
@@ -88,5 +89,7 @@ public interface FrameworkConstants {
 	 * otherwise split method will return incorrect json string.
 	 */
 	public static final String PREFIX_JSON = "json$$";
+	
+	public static final String VIEW_EXECUTION_CONTEXT = "view_execution_context";
 
 }
